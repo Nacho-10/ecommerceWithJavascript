@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <aside>
+          <header>
+            <h1 class="logo">Proyecto Final</h1>
+            <navbar>
+              <ul>
+                <li>
+                    <a class="boton-menu boton-volver" href="./index.html"><i class="bi bi-arrow-left-circle-fill"></i>Seguir comprando</a>
+                </li>
+                <li>
+                    <a class="boton-menu boton-carrito active" href="./carrito.html"><i class="bi bi-cart-fill"></i>Carrito<span class="numero">0</span></a>
+                </li>
+              </ul>
+            </navbar>
+          </header>
+        </aside>
+        <main>
+          <h2 class="titulo">Carrito</h2>
+          <div class="contenedor-carrito">
+            <p class="carrito-vacio">Tu carrito está vacío</p>
+            <div class="carrito-productos disabled">
+                <div class="carrito-producto">
+                    <img class="carrito-producto-imagen" src="./image/remeras/remera1.jpg" alt="remera1">
+                    <div class="carrito-producto-nombre">
+                        <small>Título</small>
+                        <h3>Remera1</h3>
+                    </div>
+                    <div class="carrito-producto-cantidad">
+                        <small>Cantidad</small>
+                        <p>1</p>
+                    </div>
+                    <div class="carrito-producto-precio">
+                        <small>Precio</small>
+                        <p>$3000</p>
+                    </div>
+                    <div class="carrito-producto-subtotal">
+                        <small>Subtotal</small>
+                        <p>$3000</p>
+                    </div>
+                    <button class="carrito-producto-eliminar"><i class="bi bi-trash3-fill"></i></button>
+                </div>
+                <div class="carrito-producto">
+                    <img class="carrito-producto-imagen" src="./image/remeras/remera2.jpg" alt="remera2">
+                    <div class="carrito-producto-nombre">
+                        <small>Título</small>
+                        <h3>Remera2</h3>
+                    </div>
+                    <div class="carrito-producto-cantidad">
+                        <small>Cantidad</small>
+                        <p>1</p>
+                    </div>
+                    <div class="carrito-producto-precio">
+                        <small>Precio</small>
+                        <p>$3000</p>
+                    </div>
+                    <div class="carrito-producto-subtotal">
+                        <small>Subtotal</small>
+                        <p>$3000</p>
+                    </div>
+                    <button class="carrito-producto-eliminar"><i class="bi bi-trash3-fill"></i></button>
+                </div>
+                <div class="carrito-opciones disabled">
+                    <div class="carrito-opciones-1">
+                        <button class="carrito-opciones-vaciar">Vaciar</button>
+                    </div>
+                    <div class="carrito-opciones-2">
+                        <div class="carrito-opciones-total">
+                            <p>Total:</p>
+                            <p id="total">$6000</p>
+                        </div>
+                        <button class="carrito-opciones-comprar">Comprar</button>
+                    </div>
+                </div>
+                <p class="carrito-exitoso disables">Muchas gracias por tu compra</p>
+            </div>
+          </div>
+        </main>
+      </div>
+</body>
+</html>
