@@ -25,9 +25,9 @@
         <main>
           <h2 class="titulo">Carrito</h2>
           <div class="contenedor-carrito">
-            <p class="carrito-vacio">Tu carrito está vacío</p>
+            <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío</p>
             <div class="carrito-productos disabled">
-                <div class="carrito-producto">
+                <div id="carrito-productos" class="carrito-producto">
                     <img class="carrito-producto-imagen" src="./image/remeras/remera1.jpg" alt="remera1">
                     <div class="carrito-producto-nombre">
                         <small>Título</small>
@@ -67,19 +67,19 @@
                     </div>
                     <button class="carrito-producto-eliminar"><i class="bi bi-trash3-fill"></i></button>
                 </div>
-                <div class="carrito-opciones disabled">
+                <div id="carrito-opciones" class="carrito-opciones disabled">
                     <div class="carrito-opciones-1">
-                        <button class="carrito-opciones-vaciar">Vaciar</button>
+                        <button id="carrito-opciones-vaciar" class="carrito-opciones-vaciar">Vaciar</button>
                     </div>
                     <div class="carrito-opciones-2">
                         <div class="carrito-opciones-total">
                             <p>Total:</p>
                             <p id="total">$6000</p>
                         </div>
-                        <button class="carrito-opciones-comprar">Comprar</button>
+                        <button id="carrito-opciones-comprar" class="carrito-opciones-comprar">Comprar</button>
                     </div>
                 </div>
-                <p class="carrito-exitoso disables">Muchas gracias por tu compra</p>
+                <p id="carrito-exitoso" class="carrito-exitoso disables">Muchas gracias por tu compra</p>
             </div>
           </div>
         </main>
