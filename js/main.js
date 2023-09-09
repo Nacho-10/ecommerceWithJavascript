@@ -304,14 +304,15 @@ const productosArray = [
 const contenedorProductos= document.querySelector('#contenedor-productos');
 const botonesCategorias= document.querySelectorAll('.boton-categoria');
 const tituloPrincipal= document.querySelector('#titulo-principal');
-let botonesAgregar = document.querySelectorAll('.producto-agregar');
-const numero = document.querySelector('#numero')
+
+const numero = document.querySelector('.numero')
+
 
 
 function cargarProductos(productosElegidos) {
 
     contenedorProductos.innerHTML= '';
-
+    
     productosElegidos.forEach(producto => {
         const div= document.createElement('div')
         div.classList.add('producto');
@@ -327,26 +328,34 @@ function cargarProductos(productosElegidos) {
 };
 cargarProductos(productosArray)
 
+let botonesAgregar = document.querySelectorAll('.producto-agregar');
+botonesAgregar.forEach(boton => {
+    boton.addEventListener('click', actualizarBotonesAgregar)
+})
+
+
 botonesCategorias.forEach(boton => {
     boton.addEventListener('click', (e)=>{
         botonesCategorias.forEach(boton => boton.classList.remove('active'));
         e.currentTarget.classList.add('active');
 
         if(e.currentTarget.id != 'todos'){
-            const productoCategoria= productos.find(producto => producto.categoria.id === e.currentTarget.id)
+            const productoCategoria= productosArray.find(producto => producto.categoria.id === e.currentTarget.id)
             tituloPrincipal.innerText = productoCategoria.categoria.nombre;
+
             
-            const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id)
+            const productosBoton = productosArray.filter(producto => producto.categoria.id === e.currentTarget.id)
             cargarProductos(productosBoton);
         } else {
             tituloPrincipal.innerText= 'Todos los productos';
-            cargarProductos(productos)
+            cargarProductos(productosArray)
         }
         
     })
 });
 
 function actualizarBotonesAgregar () {
+    console.log("entre a la funcion")
     botonesAgregar = document.querySelectorAll('.producto-agregar');
 
     botonesAgregar.forEach(boton => {
@@ -367,11 +376,11 @@ if(productosEnCarritoLS) {
 
 function agregarAlCarrito(e) {
     const idBoton = e.currentTarget.id;
-    const productoAgregado = productos.find(producto => producto.id === idBoton);
+    const productoAgregado = productosArray.find(producto => producto.id === idBoton);
 
     if(productosEnCarrito.some(producto => producto.id === idBoton)){
         const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
-        productosEnCarrito[index].cantidad++
+        productosEnCarrito[index].cantidad++;
     } else {
         productoAgregado.cantidad = 1;
         productosEnCarrito.push(productoAgregado)
@@ -382,5 +391,5 @@ function agregarAlCarrito(e) {
 
 function actualizarNumero() {
     let nuevoNumero = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
-    numero.innerText = nuevoNumero;
+    numero.innerText = nuevoNumero ;
 }   

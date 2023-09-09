@@ -85,7 +85,7 @@ aside {
     border-radius: 0.25rem;
 }
 
-.boton-carrito.active .numero {
+.boton-carrito.active.numero {
     background-color: var(--clr-main);
     color: var(--clr-white);
 }
@@ -113,6 +113,12 @@ main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+}
+
+@media (max-width: 576px) {
+	.contenedor-productos {
+		grid-template-columns: repeat(1,1fr);
+	}
 }
 
 .producto-imagen {
