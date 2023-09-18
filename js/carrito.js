@@ -1,6 +1,4 @@
-let productosEnCarrito = localStorage.getItem("producto-en-carrito");
-productosEnCarrito = JSON.parse(productosEnCarrito)
-
+const productosEnCarrito = JSON.parse(localStorage.setItem("producto-en-carrito"));
 
 const contenedorCarritoVacio = document.querySelector("#carrito-vacio");
 const contenedorCarritoProductos = document.querySelector("#carrito-productos");
@@ -19,6 +17,8 @@ function cargarProductosCarrito() {
     contenedorCarritoProductos.classList.remove("disabled");
     contenedorCarritoAcciones.classList.remove("disabled");
     contenedorCarritoComprado.classList.add("disabled");
+
+    contenedorCarritoProductos.innerHTML = "";  
 
     productosEnCarrito.forEach((producto) => {
       const div = document.createElement("div");
